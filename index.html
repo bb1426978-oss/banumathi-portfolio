@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Valarmathi | B.Sc. Artificial Intelligence Student</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #6C4FE0;
+            --primary-dark: #5638c7;
+            --lavender: #eee9ff;
+            --lavender-light: #f8f6ff;
+            --text: #29253a;
+            --muted: #706b7f;
+            --white: #ffffff;
+            --border: #e9e4f7;
+            --shadow: 0 12px 35px rgba(108, 79, 224, 0.10);
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #fbfaff;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Pacifico", cursive;
+            color: var(--primary);
+            font-size: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #514c61;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            padding: 90px 0 80px;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,.7), transparent 25%),
+                linear-gradient(135deg, #eee9ff, #ffffff 55%, #e7ddff);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text span {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .hero h1 {
+            font-family: "Pacifico", cursive;
+            font-size: clamp(48px, 8vw, 78px);
+            color: var(--primary);
+            font-weight: 400;
+            margin: 8px 0;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            line-height: 1.3;
+            margin-bottom: 18px;
+        }
+
+        .tagline {
+            color: var(--muted);
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .contact-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-icons a {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            transition: .3s;
+        }
+
+        .contact-icons a:hover {
+            color: white;
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .hero-card {
+            width: 280px;
+            height: 280px;
+            margin: auto;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ffffff, #ddd2ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 60px rgba(108, 79, 224, .20);
+        }
+
+        .hero-card i {
+            font-size: 100px;
+            color: var(--primary);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title .icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 12px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--lavender);
+            color: var(--primary);
+            font-size: 22px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 7px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .about-card p {
+            max-width: 850px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #dcd3fa;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 28px;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(108, 79, 224, .25);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-content p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: var(--lavender);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skill-groups {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-box h3 {
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 8px 14px;
+            border-radius: 30px;
+            background: var(--lavender);
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 35px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-progress {
+            margin-bottom: 24px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .progress {
+            height: 9px;
+            border-radius: 20px;
+            background: #eeeafa;
+            overflow: hidden;
+        }
+
+        .progress span {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--primary), #a993ff);
+        }
+
+        .progress.c {
+            width: 70%;
+        }
+
+        .progress.python {
+            width: 80%;
+        }
+
+        .progress.html {
+            width: 75%;
+        }
+
+        .description {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: .35s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(108, 79, 224, .18);
+        }
+
+        .project-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: var(--lavender);
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ================= LANGUAGES ================= */
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .language-card {
+            background: white;
+            padding: 28px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            background: var(--lavender);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .language-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ================= CERTIFICATION ================= */
+
+        .coming-soon {
+            text-align: center;
+            background: linear-gradient(135deg, #f0ebff, #ffffff);
+            padding: 55px 25px;
+            border-radius: var(--radius);
+            border: 1px dashed #b9a9ef;
+        }
+
+        .coming-soon i {
+            color: var(--primary);
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .coming-soon h3 {
+            margin-bottom: 8px;
+        }
+
+        .coming-soon p {
+            color: var(--muted);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: #f1edff;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 45px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card > p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 25px;
+            background: var(--lavender-light);
+            color: #514c61;
+            font-size: 13px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--primary);
+            color: white;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .linkedin-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 0;
+            background: #241d3b;
+            color: white;
+            text-align: center;
+        }
+
+        footer .thank-you {
+            font-family: "Pacifico", cursive;
+            color: #cfc3ff;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #bdb6ce;
+            font-size: 13px;
+        }
+
+        .heart {
+            color: #b79cff;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-icons {
+                justify-content: center;
+            }
+
+            .hero-card {
+                width: 210px;
+                height: 210px;
+            }
+
+            .hero-card i {
+                font-size: 70px;
+            }
+
+            .skill-groups,
+            .projects,
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .about-card,
+            .detail-card,
+            .project-card,
+            .contact-card {
+                padding: 25px;
+            }
+
+            .timeline-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">Valarmathi</a>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <header class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span>HELLO, I'M</span>
+
+                <h1>Valarmathi</h1>
+
+                <h2>
+                    Roll App Developer | B.Sc.
+                    <br>
+                    Artificial Intelligence Student
+                </h2>
+
+                <p class="tagline">
+                    "Keep Learning, Keep Growing"
+                </p>
+
+                <div class="contact-icons">
+
+                    <a href="tel:8940332281" title="Phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+
+                    <a href="mailto:25uai027@muthaymmal.in" title="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                    <a href="#contact" title="Location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </a>
+
+                    <a href="https://linkedin.com/in/valarmathi-s-b-sc-ai-006855437"
+                       target="_blank"
+                       title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <h2>About Me</h2>
+                <p>Career Objective</p>
+
+            </div>
+
+            <div class="about-card">
+
+                <p>
+                    To build a successful career in the field of Artificial
+                    Intelligence by using my technical skills and knowledge,
+                    and to contribute to the growth of the organization while
+                    continuously learning and improving.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h2>Education</h2>
+                <p>My academic journey</p>
+
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>B.Sc. (AI - Artificial Intelligence)</h3>
+
+                        <p>
+                            Muthayammal College of Arts & Science
+                        </p>
+
+                        <p>
+                            2025 – 2028
+                        </p>
+
+                        <span class="badge">
+                            Currently Pursuing
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>HSC (12th)</h3>
+
+                        <p>
+                            Muthayammal Higher Secondary School
+                        </p>
+
+                        <span class="badge">
+                            68%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>SSLC (10th)</h3>
+
+                        <p>
+                            Muthayammal Higher Secondary School
+                        </p>
+
+                        <span class="badge">
+                            66%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <h2>Skills</h2>
+                <p>Technical and interpersonal skills</p>
+
+            </div>
+
+
+            <div class="skill-groups">
+
+                <div class="skill-box">
+
+                    <h3>
+                        <i class="fa-solid fa-code"></i>
+                        Technical Skills
+                    </h3>
+
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">HCS</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        <i class="fa-solid fa-users"></i>
+                        Soft Skills
+                    </h3>
+
+                    <div class="tags">
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Logical Thinking</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Teamwork</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Skill Details -->
+
+            <div class="detail-card">
+
+                <h3 style="margin-bottom: 25px;">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Skills in Detail
+                </h3>
+
+
+                <div class="skill-progress">
+
+                    <div class="skill-info">
+                        <span>C Language</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="c"></span>
+                    </div>
+
+                    <p class="description">
+                        Basics, Functions, Loops
+                    </p>
+
+                </div>
+
+
+                <div class="skill-progress">
+
+                    <div class="skill-info">
+                        <span>Python</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="python"></span>
+                    </div>
+
+                    <p class="description">
+                        Basics, Conditional Statements, Loops, Data Handling
+                    </p>
+
+                </div>
+
+
+                <div class="skill-progress">
+
+                    <div class="skill-info">
+                        <span>HTML</span>
+                        <span>75%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="html"></span>
+                    </div>
+
+                    <p class="description">
+                        Tags, Lists, Forms
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <h2>Projects</h2>
+                <p>Things I have worked on</p>
+
+            </div>
+
+
+            <div class="projects">
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <h3>
+                        Student Result Management System
+                    </h3>
+
+                    <span class="badge">
+                        Python / HTML
+                    </span>
+
+                    <p style="margin-top: 15px;">
+                        A simple web-based application to manage
+                        student details and results.
+                    </p>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <h3>
+                        AI Chatbot
+                    </h3>
+
+                    <span class="badge">
+                        Mini Project · Python
+                    </span>
+
+                    <p style="margin-top: 15px;">
+                        A basic chatbot that responds to user
+                        queries using predefined logic.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LANGUAGES ================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+
+                <h2>Languages Known</h2>
+                <p>Communication skills</p>
+
+            </div>
+
+
+            <div class="language-grid">
+
+                <div class="language-card">
+
+                    <div class="language-icon">
+                        <i class="fa-solid fa-comment"></i>
+                    </div>
+
+                    <div>
+                        <h3>Tamil</h3>
+                        <p>Native</p>
+                    </div>
+
+                </div>
+
+
+                <div class="language-card">
+
+                    <div class="language-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+                        <h3>English</h3>
+                        <p>Fluent</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+
+                <h2>Certifications & Achievements</h2>
+                <p>Learning and accomplishments</p>
+
+            </div>
+
+
+            <div class="coming-soon">
+
+                <i class="fa-solid fa-award"></i>
+
+                <h3>
+                    Certifications and achievements coming soon
+                </h3>
+
+                <p>
+                    Future updates will include Python certifications,
+                    workshop participation, technical events and other
+                    achievements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="contact-card">
+
+                <h2>Let's Connect</h2>
+
+                <p>
+                    Feel free to reach out for opportunities,
+                    collaboration or simply to connect.
+                </p>
+
+
+                <div class="contact-details">
+
+                    <a href="tel:8940332281" class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        8940332281
+                    </a>
+
+                    <a href="mailto:25uai027@muthaymmal.in"
+                       class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        25uai027@muthaymmal.in
+                    </a>
+
+                    <span class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Muthayammal College of Arts & Science
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://linkedin.com/in/valarmathi-s-b-sc-ai-006855437"
+                    target="_blank"
+                    class="linkedin-btn">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    Connect on LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="thank-you">
+                Thank You
+            </div>
+
+            <p>
+                Keep Learning, Keep Growing
+                <span class="heart">♥</span>
+            </p>
+
+            <p style="margin-top: 8px;">
+                © 2026 Valarmathi · B.Sc. Artificial Intelligence
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
